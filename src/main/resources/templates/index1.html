@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<form action="">
+<form th:action="@{/dash}" method="post" th:object="${login}">
     <div class="container">
         <div class="main">
             <div class="wrapper one">
@@ -27,8 +27,8 @@
                 </div>
             </div>
             <div>
-                <input type="text" name="email" placeholder="Enter your email" id="email">
-                <input type="password" name="password" placeholder="password" id="password">
+                <input type="text" name="e" placeholder="Enter your email" id="email">
+                <input type="password" name="p" placeholder="password" id="password">
                 <label  id="create">create account, <span style="color: red;">Register</span></label>
                 <input type="submit" value="Login" >
             </div>
