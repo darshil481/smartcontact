@@ -1,5 +1,6 @@
 package com.example.smartContact.controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +17,14 @@ public class loginController {
     }
 
     @RequestMapping(value = "/dash",method = RequestMethod.POST)
-    public String solve(@ModelAttribute("login") login login){
+    public String solve(@ModelAttribute("login") login login, HttpSession session ){
 
         user user=this.userRepository.findByEmail(login.getE());
         if(user == null){
-            return "login";
+            return "index1";
         }
-        return "dashboard";
+        session.setAttribute("email",user.getEmail());
+        session.setAttribute("id",user.getId());
+        return "index2";
     }
 }
