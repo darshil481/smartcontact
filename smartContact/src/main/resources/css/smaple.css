@@ -1,0 +1,126 @@
+body {
+    background-image: url("beck.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.main {
+
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.drop-main {
+    display: flex;
+    font-size: 4rem;
+    margin: 1.5rem;
+
+    font-family: "Russo One", sans-serif;
+}
+
+.c {
+    opacity: 0;
+    animation: drop 0.8s linear forwards;
+    color: #ff0000;
+}
+
+.o {
+    opacity: 0;
+    animation: drop 0.8s linear forwards 0.2s;
+    color: #fbff00;
+}
+
+.n {
+    opacity: 0;
+    animation: drop 0.8s linear forwards 0.4s;
+    color: #09ff05;
+}
+
+.t {
+    opacity: 0;
+    animation: drop 0.8s linear forwards 0.6s;
+    color: #03f6fe;
+}
+
+.a {
+    opacity: 0;
+    animation: drop 0.8s linear forwards 0.8s;
+    color: #020bfe;
+}
+
+.t {
+    opacity: 0;
+    animation: drop 0.8s linear forwards 0.8s;
+    color: #ff00c8;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    65% {
+        transform: translateY(-17px);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateY(-22px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+#email,
+#create,
+#password {
+    display: block;
+    margin: 1rem 0;
+
+}
+
+input[type=text],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
