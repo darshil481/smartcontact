@@ -1,30 +1,36 @@
 package com.example.smartContact.controller;
 
+import com.example.smartContact.config.JwtService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import com.example.smartContact.model.login;
-import com.example.smartContact.model.user;
-import com.example.smartContact.repository.userRepository;
-@Controller
+import com.example.smartContact.model.Login;
+import com.example.smartContact.model.User;
+import com.example.smartContact.repository.UserRepository;
+
+import java.util.Optional;
+
+@RestController
 public class loginController {
     @Autowired
-    private  userRepository userRepository;
-    @RequestMapping(value = "/home",method = RequestMethod.GET)
-    public String solve1(){
-        return "index1";
-    }
+    private UserRepository userRepository;
+    private JwtService jwtService;
 
-    @RequestMapping(value = "/dash",method = RequestMethod.POST)
-    public String solve(@ModelAttribute("login") login login, HttpSession session ){
+   @PostMapping("/dash")
 
-        user user=this.userRepository.findByEmail(login.getE());
-        if(user == null){
-            return "index1";
-        }
-        session.setAttribute("email",user.getEmail());
-        session.setAttribute("id",user.getId());
-        return "index2";
+    public String solve(@RequestBody() Login login, HttpSession session ){
+        System.out.println(login.getE());
+        String token=jwtService.generateToken(login.getE());
+        System.out.println(token);
+//        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(login.getE(),login.getP()
+//        ));
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return token;
     }
 }

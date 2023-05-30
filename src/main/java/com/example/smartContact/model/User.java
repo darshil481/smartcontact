@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="user")
-public class user {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,7 +41,7 @@ public class user {
     private String abount;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
-    private List<contact> contactList=new ArrayList<>();
+    private List<Contact> contactList=new ArrayList<>();
 
 
 

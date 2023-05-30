@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name="contact")
-public class contact {
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int c_id;
@@ -20,5 +20,5 @@ public class contact {
     private  String description;
     private String phone;
     @ManyToOne()
-    private user user;
+    private User user;
 }
