@@ -7,13 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="smartContact" />
+        <module name="smartContact (1)" />
+        <module name="smartContact (2)" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="smartContact" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="smartContact" options="-parameters" />
+      <module name="smartContact (1)" options="-parameters" />
+      <module name="smartContact (2)" options="-parameters" />
     </option>
   </component>
 </project>
